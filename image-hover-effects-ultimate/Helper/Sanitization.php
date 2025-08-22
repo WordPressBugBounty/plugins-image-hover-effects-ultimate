@@ -187,7 +187,7 @@ trait Sanitization {
                     'default' => '',
                     'label_on' => esc_html__('Yes', 'image-hover-effects-ultimate'),
                     'label_off' => esc_html__('No', 'image-hover-effects-ultimate'),
-                    'placeholder' => esc_html__('', 'image-hover-effects-ultimate'),
+                    'placeholder' => '',
                     'selector-data' => TRUE,
                     'render' => TRUE,
                     'responsive' => 'laptop',
@@ -578,6 +578,7 @@ trait Sanitization {
                     ?>
                     <div class="shortcode-form-control-input-wrapper"  retundata='<?php echo esc_attr($retunvalue); ?>'>
                         <?php
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo wp_editor(
                                 $value,
                                 $id,
@@ -696,7 +697,7 @@ trait Sanitization {
                             <div class="shortcode-form-units-choices">
                                 <?php
                                 foreach ($arg['range'] as $key => $val) {
-                                    $rand = rand(10000, 233333333);
+                                    $rand = wp_rand(10000, 233333333);
                                     ?>
                                     <input id="<?php echo esc_attr($id); ?>-choices-<?php echo esc_attr($rand); ?>" type="radio" name="<?php echo esc_attr($id); ?>-choices"  value="<?php echo esc_html($key); ?>" <?php
                                     if ($key == $unit):
@@ -1103,7 +1104,7 @@ trait Sanitization {
                             <div class="shortcode-form-units-choices">
                                 <?php
                                 foreach ($arg['range'] as $key => $val) {
-                                    $rand = rand(10000, 233333333);
+                                    $rand = wp_rand(10000, 233333333);
                                     ?>
 
                                     <input id="<?php echo esc_attr($id); ?>-choices-<?php echo esc_attr($rand); ?>" type="radio" name="<?php echo esc_attr($id); ?>-choices"  value="<?php echo esc_html($key); ?>" <?php
@@ -1548,7 +1549,7 @@ trait Sanitization {
                                 $id . '-select',
                                 $data,
                                 [
-                                    'label' => esc_html__($level, 'image-hover-effects-ultimate'),
+                                    'label' => $level,
                                     'type' => Controls::CHOOSE,
                                     'loader' => TRUE,
                                     'default' => $type,
