@@ -3,7 +3,7 @@
         'name' => 'wpkin/image-hover-effects-ultimate',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'a59da43e2c6d205448710cdcbad59ab907006ef8',
+        'reference' => '6bfd1cedea631a582fb8ae2b8673961858449586',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -24,7 +24,7 @@
         'wpkin/image-hover-effects-ultimate' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'a59da43e2c6d205448710cdcbad59ab907006ef8',
+            'reference' => '6bfd1cedea631a582fb8ae2b8673961858449586',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

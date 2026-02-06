@@ -1,11 +1,11 @@
-=== Image Hover Effects Ultimate (Image Gallery, Effects, Lightbox, Comparison or Magnifier) ===
+=== Image Hover Effects Ultimate ===
 Contributors: wpkin, richardmallick
 Donate link:  https://wpkin.com
-Tags: responsive image effects, awesome css3 effects, awesome image effects,  css3 effects, top image effects for wordpress. 
+Tags: responsive image effects, awesome css3 effects, awesome image effects, css3 effects, top image effects for wordpress. 
 Requires at least: 6.2
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 9.10.3
+Stable tag: 9.11.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -275,6 +275,47 @@ Its too easy Chose your style from Effects List and click at Clone.
 
 
 == Changelog ==
+
+= 9.11.0 =
+* New: Added item count display for each module in the "Image Hover" dashboard page.
+* New: Added "Create New" and "Import" buttons to the Shortcode page header for better navigation.
+* New: Implemented iframe-based preview for strict style isolation and better performance.
+* New: Added responsive device controls (Desktop, Tablet, Mobile) with live preview scaling.
+* Improvement: Moved inline CSS styles to the external admin stylesheet for better maintainability.
+* Improvement: Cleaned up the Shortcode page interface by removing the unused "Import Image Hover Files" box.
+* Improvement: Refined item count display logic to hide counts for extension modules.
+* Improvement: Simplified template selection by showing all available templates on the effect page, removing the need for a separate "Add More" step.
+* Fix: Restored original header text on the Shortcode page after initial layout changes.
+* Fix: Fixed CSS specificity issues where saved styles could override live preview changes.
+* Fix: Resolved browser event handling for numeric inputs to ensure immediate preview updates.
+* Fix: Solved Shortcode backward compatibility issues with legacy data.
+* Fix: Resolved Pro feature access issues with legacy license status.
+
+= 9.10.6 =
+* New: Enhanced frontend asset loader with conditional dependencies; loads Waypoints and Touch scripts only when enabled in settings to reduce page weight.
+* New: Added cache-busting for admin assets via file modification time for Getting Started and admin screens to ensure fresh updates without manual cache clear.
+* Improvement: Optimized inline JS injection timing for smoother rendering across admin and frontend contexts.
+* Improvement: Hardened AJAX/REST flows with stricter nonce verification and safe JSON output sanitization in `ImageApi`.
+* Fix: Minor stability fixes across shortcode rendering and widget output escaping.
+* Fix: Fixed security issue for Lightbox.
+
+= 9.10.5 =
+* Fix: Resolved WordPress 6.7 notice "_load_textdomain_just_in_time" by initializing the plugin on `init` after translations load, ensuring proper text domain handling.
+* Fix: Allowed safe HTML in Short Description by replacing `sanitize_textarea_field` with `wp_kses_post` during form submission, enabling `<br>` line breaks and similar tags.
+* Improvement: Kept initialization lightweight and deferred heavy operations to later hooks to maintain performance.
+
+= 9.10.4 = 
+* Update UI/UX
+* Added Getting started page.
+* Refactored coding structure.
+* Fixed HTML tags not rendering in Lightbox title and description fields.
+* Fixed HTML tags not rendering in button text across all modules.
+* Fixed Visual Composer integration - dropdown now properly passes Style ID.
+* Fixed Widget fatal error - corrected Bootstrap class reference.
+* Fixed Widget block editor error with proper validation.
+* Fixed PHP 8.2 deprecation warning for dynamic properties.
+* Enhanced error handling and debugging throughout shortcode system.
+* Improved input validation for all shortcode rendering. 
 
 = 9.10.3 = 
 * Fixed all reported security issues.
@@ -713,4 +754,4 @@ Upgrade to Resolve Viewport Capable Hover effects.
 Upgrade to Resolve Touchscreen Device Capable Hover effects.
 
 = 7.3 =
-Upgrade to Resolve Touchscreen Device Capable Hover effects. Also Solved some responsive bugs. 
+Upgrade to Resolve Touchscreen Device Capable Hover effects. Also Solved some responsive bugs.

@@ -1,0 +1,813 @@
+#adminmenumain,
+#wpadminbar,
+#wpfooter,
+.notice,
+.updated,
+.error,
+.is-dismissible,
+.update-nag,
+div.fs-notice.promotion, div.fs-notice.success, div.fs-notice.updated {
+  display: none !important;
+}
+button:focus,
+button:active{
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;	
+}
+#wpcontent {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+html.wp-toolbar {
+  padding-top: 0 !important;
+}
+.auto-fold #wpcontent {
+  padding-left: 0 !important;
+}
+
+/* Hide browser scrollbar on main editor page only */
+body.toplevel_page_oxi-image-hover-ultimate {
+  overflow: hidden !important;
+}
+
+/* Custom Header for Editor Page */
+.oxi-addons-header {
+  background: #fff;
+  padding: 0px 20px 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+
+/* Add padding to wrapper to compensate for fixed header */
+.wrap > .oxi-addons-wrapper {
+  padding-top: 80px;
+}
+
+/* Left Side - Navigation Buttons */
+.oxi-addons-header-left {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.oxi-addons-header-left a {
+  text-decoration: none;
+color: #5F6368;
+font-size: 13px;
+font-weight: 500;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 18px 14px;
+border-right: 1px solid #f6c8e1;
+transition: all 0.2s ease;
+}
+.oxi-addons-header-left a:hover {
+  background: #F1F3F4;
+  border-color: #DADCE0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.oxi-addons-header-left a i {
+  font-size: 12px;
+}
+
+/* Middle-Left Side (Tooltip and Shortcode) */
+.oxi-addons-header-middle-left {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 7%;
+  margin-right: auto;
+  z-index: 1;
+}
+
+/* Center Side (Device Icons Only) - Absolutely Centered */
+.oxi-addons-header-center {
+  position: absolute;
+  left: 58%;
+  transform: translateX(-58%);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+.oxi-addons-header-center > * {
+  pointer-events: auto;
+}
+.oxi-iheu-header-devices {
+    background: #fff;
+    border: 1px solid #E8EAED;
+    border-radius: 8px;
+    padding: 4px;
+    display: inline-flex;
+    gap: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.oxi-iheu-header-devices .oxi-device-btn {
+  	border: 0;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #5F6368;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.wpte-device-btn svg {
+  display: block;
+}
+.oxi-device-btn:hover {
+  background: #F8F9FA;
+}
+.oxi-device-btn.active {
+  background: #f75186;
+  color: #fff;
+}
+
+
+/* Right Side */
+.oxi-addons-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+}
+
+/* Upgrade Button - Warning Orange Theme */
+.oxi-btn-upgrade {
+  background: #FEF7E0;
+  color: #E37400;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 1px solid #F9AB00;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.oxi-btn-upgrade:hover {
+  background: #FDE293;
+  border-color: #E37400;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  color: #E37400;
+}
+.oxi-btn-upgrade::before {
+  content: "⭐";
+  font-size: 12px;
+}
+
+/* Visit Site Button - Primary Blue Theme */
+.oxi-btn-visit {
+	background: #E8F0FE;
+	color: #1A73E8 !important;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: 1px solid #D2E3FC;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.oxi-btn-visit:hover {
+  background: #D2E3FC;
+  border-color: #1A73E8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  color: #1557B0 !important;
+}
+.oxi-btn-visit i {
+  font-size: 12px;
+  color: inherit !important;
+}
+.oxi-header-tooltip {
+  position: relative;
+  cursor: help;
+  color: #888;
+}
+.oxi-header-tooltip:hover .oxi-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+.oxi-tooltip-text {
+  visibility: hidden;
+  width: 220px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 99;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.oxi-tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+.oxi-header-shortcode {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #fadbe5;
+  border-radius: 4px;
+  padding: 0;
+  overflow: hidden;
+}
+.oxi-shortcode-text {
+    display: inline-flex;
+    align-items: center;
+    height: 34px;
+    padding: 0 5px;
+    background: #ffffff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    color: #d73a49;
+}
+.oxi-copy-btn {
+  border: none;
+  color: #f75186;
+  background: #fadbe5;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-left: 1px solid #fadbe5;
+}
+.oxi-copy-btn:hover {
+  background: #f8d5e0;
+}
+
+/* Shortcode Name Dropdown */
+.oxi-header-name-dropdown {
+  position: relative;
+}
+.oxi-header-name-toggle {
+  background: #f0f6fc;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #0073aa;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.oxi-header-name-toggle:hover {
+  background: #e1ecf7;
+  color: #005a87;
+}
+.oxi-header-name-toggle i {
+  font-size: 16px;
+  color: inherit;
+}
+.oxi-header-name-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  min-width: 250px;
+  z-index: 9999;
+  padding: 15px;
+}
+.oxi-header-name-dropdown.active .oxi-header-name-content {
+  display: block;
+}
+.oxi-header-name-group {
+  display: flex;
+  align-items: center;
+}
+.oxi-header-name-input {
+  flex-grow: 1;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 13px;
+  color: #333;
+  width: 100%;
+}
+.oxi-header-name-save-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 6px 15px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.oxi-header-name-save-btn:hover {
+  background: #218838;
+}
+
+/* Layout Restructuring */
+.oxi-addons-row {
+    padding: 15px;
+}
+
+.oxi-addons-image-tabs-mode {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0;
+    align-items: stretch;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+/* Sidebar Actions (Add New, Rearrange) */
+.oxi-addons-sidebar-actions {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: #fcfcfc;
+}
+
+/* Sidebar (Settings/Tabs) */
+.oxi-addons-settings {
+    width: 300px;
+    min-width: 300px;
+    flex-shrink: 0;
+    margin-right: 0 !important; /* Reset any float/margin */
+    background: #fff;
+    border-right: 1px solid #e5e5e5;
+    z-index: 10;
+    position: fixed;
+    top: 56px; /* Align with content start */
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 56px);
+    overflow: hidden !important; /* Prevent outer scroll */
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* Collapsed state */
+.oxi-addons-settings.collapsed {
+    transform: translateX(-100%);
+}
+
+/* Resize handle */
+.oxi-sidebar-resize-handle {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    width: 10px;
+    height: 100%;
+    cursor: ew-resize;
+    z-index: 11;
+    transition: background-color 0.2s;
+}
+
+.oxi-sidebar-resize-handle:hover,
+.oxi-sidebar-resize-handle.resizing {
+    background-color: rgba(139, 61, 255, 0.2);
+}
+
+.oxi-sidebar-resize-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 30px;
+    background: rgba(139, 61, 255, 0.4);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.oxi-sidebar-resize-handle:hover::after,
+.oxi-sidebar-resize-handle.resizing::after {
+    opacity: 1;
+}
+
+/* Toggle button */
+.oxi-sidebar-toggle-btn {
+    position: fixed;
+    top: 50%;
+    left: 300px; /* Default position next to sidebar */
+    transform: translateY(-50%);
+    width: 18px;
+    height: 56px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9; /* Below header but above content */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease, left 0.3s ease; /* Smooth left movement */
+}
+
+.oxi-sidebar-toggle-btn:hover {
+    background: #f8f9fa;
+    width: 20px;
+}
+
+.oxi-sidebar-toggle-btn i {
+    color: #f75186;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+/* When sidebar is collapsed, move button to left edge */
+.oxi-addons-settings.collapsed ~ .oxi-sidebar-toggle-btn {
+    left: 0;
+    border-left: 1px solid #e5e5e5;
+    border-right: none;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.oxi-addons-settings.collapsed ~ .oxi-sidebar-toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* Make inner content of sidebar full width */
+.oxi-addons-style-left {
+    width: 100% !important;
+    float: none !important;
+    padding-right: 0 !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.oxi-sidebar-header-section {
+    flex-shrink: 0;
+    background: #fff;
+}
+.oxi-sidebar-breadcrumb {
+    background: #eff2f9;
+    padding: 10px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.oxi-sidebar-btn {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #dae1ee;
+    border-radius: 4px;
+    color: #2271b1;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    padding: 6px 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.2s;
+    line-height: normal;
+}
+.oxi-sidebar-btn:hover {
+    background: #fff;
+    color: #135e96;
+    border-color: #2271b1;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.oxi-sidebar-main-title {
+    background: #FDE4EC;
+    color: #1d2327;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #FDE4EC;
+}
+
+/* Main Form Layout */
+#oxi-addons-form-submit {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.oxi-addons-style-settings {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.oxi-addons-tabs-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    background: #E3E3E3;
+}
+
+
+/* Tabs Styling */
+.oxi-addons-tabs-wrapper .nav-tabs {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.oxi-addons-tabs-wrapper .nav-tabs > li {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+.oxi-addons-tabs-wrapper .nav-tabs > li > a {
+    display: block;
+    padding: 12px 5px;
+    color: #555;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    margin: 0;
+    font-size: 14px;
+    background: transparent;
+}
+.oxi-addons-tabs-wrapper .nav-tabs > li.active > a,
+.oxi-addons-tabs-wrapper .nav-tabs > li > a:hover {
+    color: #1d2327;
+    background: transparent;
+    border-bottom: 2px solid #8b3dff; /* Purple accent */
+}
+
+/* Tab Content */
+.oxi-addons-tabs-wrapper .tab-content {
+    padding: 15px;
+}
+
+/* Footer Styling */
+.oxi-addons-setting-save {
+    background: #393939; /* Dark grey */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-top: 1px solid #ddd;
+}
+.oxi-addons-setting-save .btn-success {
+    background: #46b450;
+    border-color: #46b450;
+    color: #fff;
+    font-weight: 600;
+    padding: 2px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.oxi-addons-setting-save .btn-success:hover {
+    background: #369a40;
+}
+.oxi-addons-setting-save .btn-secondary,
+.oxi-addons-setting-save .btn-danger {
+    background: transparent;
+    border: 1px solid #666;
+    color: #ccc;
+    font-size: 12px;
+    padding: 3px 20px;
+    border-radius: 4px;
+}
+.oxi-addons-setting-save .btn-secondary:hover,
+.oxi-addons-setting-save .btn-danger:hover {
+    border-color: #999;
+    color: #fff;
+}
+
+.oxi-addons-setting-save .btn{
+	margin: 0;
+}
+
+/* Hide the old right sidebar if it's still there */
+/*.oxi-addons-style-right {
+    display: none !important;
+}*/
+
+/* Preview Area (Main Content) */
+.oxi-addons-Preview {
+    flex-grow: 1;
+    width: calc(100% - 330px) !important;
+    margin-left: 330px !important; /* Push right to clear fixed sidebar */
+    margin-bottom: 20px !important;
+    background: #f0f0f1; /* Match WP background or desired color */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 100px);
+    transition: width 0.3s ease, margin-left 0.3s ease;
+	padding-right: 20px;
+}
+
+/* Full width when sidebar is collapsed */
+.oxi-addons-settings.collapsed ~ .oxi-addons-Preview {
+    width: 100% !important;
+    margin-left: 0 !important;
+	padding: 0 30px;
+}
+
+.oxi-addons-Preview .oxi-addons-wrapper {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure preview content fills the space */
+.oxi-addons-style-left-preview {
+    width: 100% !important;
+    float: none !important;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right Sidebar (now below preview) */
+.oxi-addons-style-right {
+    display: block !important;
+    width: 100% !important;
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.oxi-addons-style-left-preview-heading {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Preview Header Left - Shortcode and Tooltip */
+.oxi-preview-header-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Preview Header Center - Device Icons */
+.oxi-preview-header-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Preview Header Right - Color Picker */
+.oxi-preview-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Specific styling for preview header color picker - larger size */
+.oxi-preview-header-right .oxi-addons-minicolor {
+    width: 200px !important;
+    height: 36px !important;
+    border-radius: 4px;
+	border-color: #ddd !important;
+}
+
+/* Icon picker input in preview header - reduced width */
+.oxi-preview-header-right .minicolors-swatch {
+	left: 1px !important;
+	top: 1px !important;
+    width: 34px !important;
+    height: 34px !important;
+	border-radius: 4px !important;
+}
+
+.oxi-preview-header-right .minicolors {
+    width: auto !important;
+}
+
+.oxi-addons-preview-data {
+    flex-grow: 1;
+    display: flex;
+    overflow: auto;
+}
+
+/* Shortcode Name Input Group - Unified Design */
+#shortcode-addons-name-change-submit {
+	margin: 0;
+	display: inline-flex;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #E8EAED;
+    border-radius: 6px;
+    overflow: hidden;
+}
+#shortcode-addons-name-change-submit:focus-within {
+	border-color: #1A73E8;
+	box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+#shortcode-addons-name-change-submit .oxi-header-name-input {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	padding: 0px 12px;
+	font-size: 13px;
+	color: #202124;
+	background: transparent;
+	min-width: 180px;
+}
+#shortcode-addons-name-change-submit .oxi-header-name-input::placeholder {
+	color: #5F6368;
+}
+#shortcode-addons-name-change-submit .oxi-header-name-save-btn {
+	background: #0F9D58;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	font-size: 13px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border-left: 1px solid #E8EAED;
+}
+#shortcode-addons-name-change-submit .oxi-header-name-save-btn:hover {
+	background: #0B8043;
+}
+
+/* Preloader */
+.oxi-image-hover-editor-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.oxi-image-hover-editor-preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.oxi-image-hover-editor-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #f75186; /* Theme Pink */
+    border-radius: 50%;
+    animation: oxi-spin 1s linear infinite;
+}
+
+@keyframes oxi-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
