@@ -5,6 +5,11 @@
   margin: 0px 0px 0px 0px !important;
   width: 100%;
 }
+
+#fs_connect {
+    margin: 60px auto 20px !important;
+    width: 484px !important;
+}
 /*#wpwrap .notice{
     display: none;
 }*/
@@ -98,7 +103,7 @@ ADMIN MENU
   background-repeat: no-repeat;
   background-position: 0;
   background-size: contain;
-  height: 35px;
+  height: 26px;
   width: 180px;
   overflow: hidden;
   cursor: pointer;

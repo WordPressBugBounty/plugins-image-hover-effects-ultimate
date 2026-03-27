@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name:       Image Hover Effects Ultimate
- * Plugin URI:        https://wpkin.com
+ * Plugin URI:        https://oxilab.dev
  * Description:       Create Awesome Image Hover Effects as Image Gallery, Lightbox, Comparison and Magnifier with Impressive, Lightweight, Responsive Image Hover Effects Ultimate. Use 500+ modern and elegant CSS hover effects and animations.
- * Version:           9.11.0
- * Author:            WPKIN
- * Author URI:        https://wpkin.com
+ * Version:           9.11.1
+ * Author:            Oxilab
+ * Author URI:        https://oxilab.dev
  * Text Domain:       image-hover-effects-ultimate
  * License:           GPLv2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -26,14 +26,14 @@ if (! defined('ABSPATH')) {
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-if (! function_exists('wpkin_iheu_v')) {
+if (! function_exists('oxilab_iheu_v')) {
 	// Create a helper function for easy SDK access.
-	function wpkin_iheu_v()
+	function oxilab_iheu_v()
 	{
-		global $wpkin_iheu_v;
+		global $oxilab_iheu_v;
 
-		if (! isset($wpkin_iheu_v)) {
-			$wpkin_iheu_v = fs_dynamic_init(
+		if (! isset($oxilab_iheu_v)) {
+			$oxilab_iheu_v = fs_dynamic_init(
 				[
 					'id'                  => '20097',
 					'slug'                => 'oxi-image-hover-ultimate',
@@ -54,17 +54,17 @@ if (! function_exists('wpkin_iheu_v')) {
 			);
 		}
 
-		return $wpkin_iheu_v;
+		return $oxilab_iheu_v;
 	}
 
 	// Init Freemius.
-	wpkin_iheu_v();
+	oxilab_iheu_v();
 	// Signal that SDK was initiated.
-	do_action('wpkin_iheu_v_loaded');
+	do_action('oxilab_iheu_v_loaded');
 }
 
-/** If class `WPKin_Imagehover` doesn't exists yet. */
-if (! class_exists('WPKin_Imagehover')) {
+/** If class `Oxilab_Imagehover` doesn't exists yet. */
+if (! class_exists('Oxilab_Imagehover')) {
 
 	/**
 	 * Sets up and initializes the plugin.
@@ -72,7 +72,7 @@ if (! class_exists('WPKin_Imagehover')) {
 	 *
 	 * @since 1.0.0
 	 */
-	final class WPKin_Imagehover
+	final class Oxilab_Imagehover
 	{
 
 		use \OXI_IMAGE_HOVER_PLUGINS\Helper\Public_Helper;
@@ -147,7 +147,7 @@ if (! class_exists('WPKin_Imagehover')) {
 			define('OXI_IMAGE_HOVER_BASENAME', plugin_basename(__FILE__));
 			define('OXI_IMAGE_HOVER_PATH', plugin_dir_path(__FILE__));
 			define('OXI_IMAGE_HOVER_URL', plugins_url('/', __FILE__));
-			define('OXI_IMAGE_HOVER_PLUGIN_VERSION', '9.11.0');
+			define('OXI_IMAGE_HOVER_PLUGIN_VERSION', '9.11.1');
 			define('OXI_IMAGE_HOVER_TEXTDOMAIN', 'image-hover-effects-ultimate');
 		}
 
@@ -164,7 +164,6 @@ if (! class_exists('WPKin_Imagehover')) {
 
 			if (is_admin()) {
 				new OXI_IMAGE_HOVER_PLUGINS\Includes\Admin();
-				$this->User_Admin();
 				$this->User_Reviews();
 			}
 			$this->Admin_Filters();
@@ -202,11 +201,6 @@ if (! class_exists('WPKin_Imagehover')) {
 		 * @access public
 		 */
 		public function deactivate() {}
-
-		public function User_Admin()
-		{
-			add_action('admin_head', [$this, 'Admin_Icon']);
-		}
 
 		/**
 		 * Execute Shortcode
@@ -258,13 +252,13 @@ if (! class_exists('WPKin_Imagehover')) {
 /**
  * Initilize the main plugin
  *
- * @return /WPKin_Imagehover
+ * @return /Oxilab_Imagehover
  */
-function wpkin_imagehover()
+function oxilab_imagehover()
 {
 
-	if (class_exists('WPKin_Imagehover')) {
-		return WPKin_Imagehover::init();
+	if (class_exists('Oxilab_Imagehover')) {
+		return Oxilab_Imagehover::init();
 	}
 
 	return false;
@@ -273,4 +267,4 @@ function wpkin_imagehover()
 /**
  * Kick-off the plugin
  */
-wpkin_imagehover();
+oxilab_imagehover();
