@@ -1,10 +1,10 @@
 === Image Hover Effects Ultimate ( Image Gallery, Effects, Lightbox, Comparison & Magnifier ) ===
-Contributors: oxilab, wpkin, richardmallick
+Contributors: oxilab, richardmallick
 Tags: image hover effects, css3 effects, image hover animation, image gallery, photo gallery
 Requires at least: 6.2
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 9.11.2
+Stable tag: 9.11.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -180,6 +180,15 @@ The free version gives you access to all 10 modules and hundreds of layouts. Pro
 ---
 
 == Changelog ==
+
+= 9.11.3 =
+* ✨ Improvement: Added dynamic "Edit Shortcode" button to Elementor Widget for quick access to the styling dashboard
+* 🐛 Fix: Resolved issue where the shortcode edit button URL wouldn't update on dropdown change
+* 🐛 Fix: Fixed CSS and JS failing to load on the plugin's internal backend template listing and editor pages
+* 🐛 Fix: Corrected asset isolation logic in the iframe preview which accidentally blocked some internal scripts
+* 🐛 Fix: Whitelisted missing external dependencies (e.g., image zoom, isotope) in the iframe preview to prevent layout breaks
+* 🐛 Fix: Resolved CSS handle collisions between the Lightbox and Magnifier modules which caused Lightbox styles to fail loading
+* 🐛 Fix: Fixed raw CSS text leaking onto the screen in nested modules (e.g., Filter) by properly sanitizing content before shortcode evaluation
 
 = 9.11.2 =
 * 🆕 New: Added Elementor Widget for Image Hover Effects — select and embed shortcodes directly from the Elementor editor

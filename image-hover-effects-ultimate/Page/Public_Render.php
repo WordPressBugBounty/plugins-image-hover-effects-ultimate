@@ -155,8 +155,9 @@ class Public_Render {
         // (AJAX). We snapshot the queue, diff it, and echo raw <link>/<script>
         // tags directly so they are always present in the rendered output.
         $is_elementor_context = $is_elementor_ajax || $is_elementor_edit || $is_elementor_preview;
+        $is_direct_output = $is_elementor_context || is_admin();
 
-        if ( $is_elementor_context ) {
+        if ( $is_direct_output ) {
             $styles_before  = wp_styles()->queue;
             $scripts_before = wp_scripts()->queue;
         }
@@ -167,7 +168,7 @@ class Public_Render {
         $this->render();
 
         // Output any newly-enqueued CSS/JS files as direct <link>/<script> tags.
-        if ( $is_elementor_context ) {
+        if ( $is_direct_output ) {
             $new_styles  = array_diff( wp_styles()->queue, $styles_before );
             $new_scripts = array_diff( wp_scripts()->queue, $scripts_before );
 
@@ -216,7 +217,7 @@ class Public_Render {
                 $jquery = '(function ($) { setTimeout(function () {' . $inlinejs . '}, 500); })(jQuery);';
             }
 
-            if ( $is_elementor_context ) {
+            if ( $is_direct_output ) {
                 echo '<script>' . $jquery . '</script>';
             } else {
                 wp_add_inline_script( $this->JSHANDLE, $jquery );
@@ -226,7 +227,7 @@ class Public_Render {
         if ( ! empty( $inlinecss ) ) {
             $css = html_entity_decode( str_replace( '<br>', '', str_replace( '&nbsp;', ' ', $inlinecss ) ) );
 
-            if ( $is_elementor_context ) {
+            if ( $is_direct_output ) {
                 echo '<style id="oxi-iheu-inline-css-' . esc_attr( $this->oxiid ) . '">' . $css . '</style>';
             } elseif ( $this->admin === 'admin' ) {
                 wp_add_inline_style( 'oxi-image-hover', $css );
@@ -775,27 +776,25 @@ class Public_Render {
     }
 
     public function text_render( $data ) {
-        $safe = do_shortcode(
-            str_replace(
-                'spTac',
-                '&nbsp;',
-                str_replace( 'spBac', '<br>', html_entity_decode( (string) $data ) )
-            ),
-            $ignore_html = false
+        $text = str_replace(
+            'spTac',
+            '&nbsp;',
+            str_replace( 'spBac', '<br>', html_entity_decode( (string) $data ) )
         );
-        echo wp_kses_post( (string) $safe );
+        
+        $safe_text = wp_kses_post( $text );
+        echo do_shortcode( $safe_text );
     }
 
     public function return_text( $data ) {
-        $safe = do_shortcode(
-            str_replace(
-                'spTac',
-                '&nbsp;',
-                str_replace( 'spBac', '<br>', html_entity_decode( (string) $data ) )
-            ),
-            $ignore_html = false
+        $text = str_replace(
+            'spTac',
+            '&nbsp;',
+            str_replace( 'spBac', '<br>', html_entity_decode( (string) $data ) )
         );
-        return wp_kses_post( (string) $safe );
+        
+        $safe_text = wp_kses_post( $text );
+        return do_shortcode( $safe_text );
     }
 
     public function custom_font_awesome_render( $data ) {
