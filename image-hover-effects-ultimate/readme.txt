@@ -4,7 +4,7 @@ Tags: image hover effects, css3 effects, image hover animation, image gallery, p
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 9.11.6
+Stable tag: 9.11.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -147,11 +147,11 @@ Here is why 20,000+ users choose it:
 
 = 🔌 Does this plugin work with Elementor? =
 
-Yes. The plugin includes a native Elementor widget. Search for "Image Hover" in the Elementor editor panel, drag it onto your page, and select your effect directly from the widget's Inspector Controls — no shortcode needed. You can also use the shortcode approach if you prefer.
+Yes. The plugin includes a native Elementor widget. Search for "Image Hover" in the Elementor editor panel, drag it onto your page, and select your effect directly from the widget's Inspector Controls, no shortcode needed. You can also use the shortcode approach if you prefer.
 
 = 🟦 Does it work with the Gutenberg block editor? =
 
-Yes. The plugin includes a native Gutenberg block. Search for "Image Hover" in the block inserter, add the block, and select your effect from the Inspector Controls sidebar. A live preview renders directly in the editor — no shortcode needed.
+Yes. The plugin includes a native Gutenberg block. Search for "Image Hover" in the block inserter, add the block, and select your effect from the Inspector Controls sidebar. A live preview renders directly in the editor, no shortcode needed.
 
 = 💻 Do I need to write any code? =
 
@@ -183,6 +183,10 @@ The free version gives you access to all 10 modules and hundreds of layouts. Pro
 ---
 
 == Changelog ==
+
+= 9.11.7 =
+* 🐛 Fix: Edit and rearrange modals now populate correctly for image items saved on older versions, legacy rawdata stored with extra backslash escaping is decoded with a stripslashes fallback that matches the render paths
+* 🐛 Fix: Removed Undefined array key PHP warnings on the frontend when rendering General effects created on older versions where heading, description or button fields were not stored, missing item fields are now checked safely
 
 = 9.11.6 =
 * 🆕 New: Added native Gutenberg block, insert and preview Image Hover Effect styles directly from the WordPress block editor without writing shortcodes
