@@ -4,7 +4,7 @@ Tags: image hover effects, css3 effects, image hover animation, image gallery, p
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 9.12.0
+Stable tag: 9.12.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ The plugin is lightweight, fully responsive, and compatible with Elementor, Gute
 
 🎬 **[Live Demos](https://demos.oxilab.dev/imagehover/demos/)** | ⭐ **[Upgrade to Pro](https://oxilab.dev/image-hover-effects/pricing/)** | 📖 **[Documentation](https://oxilab.dev/docs/image-hover-effects/)** | 🆘 **[Support](https://wordpress.org/support/plugin/image-hover-effects-ultimate#new-post)**
 
-[youtube https://www.youtube.com/watch?v=SbXhwL2hyVs]
+[youtube https://www.youtube.com/watch?v=9nqUpIjAFdA]
 
 ---
 
@@ -171,20 +171,28 @@ The free version gives you access to all 10 modules and hundreds of layouts. Pro
 
 == Screenshots ==
 
-1. 🗂️ Image Hover dashboard showing all effect modules.
-2. 🖼️ Template library: browse and select from 150+ pre-designed layouts.
-3. ✏️ Naming a new shortcode before customization begins.
-4. 🎛️ Fully customizable admin panel with live preview.
-5. ➕ Image upload and content form for individual hover items.
-6. 🎨 Background settings with gradient and image upload options.
-7. 🔤 Typography controls with Google Fonts for headings and descriptions.
-8. 📱 Responsive device preview controls: Desktop, Tablet, and Mobile.
-9. 🎠 Carousel and Slider extension with hover effects.
-10. 🔽 Shortcode List.
+1. 🗂️ The Image Hover page: every effect type as a card, with its number of ready made layouts, how many styles you saved, and quick links to its templates, docs and demo.
+2. 🖼️ The template library: preview every ready made design and start from the one you like.
+3. ✏️ Name your new style in a clean dialog, then go straight to the editor.
+4. 🎛️ The style editor: settings on the left, a live preview of your hover effect on the right.
+5. ➕ The image form: add the image, title, description, link and button text for each item.
+6. 🎨 Style settings with the hover effect showing live in the preview, plus Edit, Clone and Delete on every item.
+7. 🔤 Typography controls with Google Fonts, size, weight, line height and letter spacing.
+8. 📱 Preview your design on desktop, tablet and mobile, each with its own column settings.
+9. 📘 The "How to use?" menu: step by step guides for your first hover effect, the Gutenberg block, Elementor, WPBakery and widgets.
+10. 🔽 The shortcode list: copy a shortcode or its PHP code, or edit, clone, export and delete a style.
+11. 🚀 The Getting Started page: a video tutorial, three simple steps and how to use it with your page builder.
 
 ---
 
 == Changelog ==
+
+= 9.12.1 =
+* ✨ Improvement: Redesigned the Image Hover page, every effect type now has a card showing its number of ready made layouts and how many styles you saved, with quick links to its templates, docs and demo
+* ✨ Improvement: Redesigned the Create New page, every design now has its own preview card and "Use this design" button, and naming the new style happens in a clean dialog
+* ✨ Improvement: Refreshed the style editor look, cleaner header, tabs, setting cards, fields, preview bar and item form, all your saved styles and settings stay exactly the same
+* ✨ Improvement: Redesigned the "How to use?" menu, every guide now has an icon and a short line on what it covers, with a link to browse all documentation
+* ✨ Improvement: New getting started video on the Getting Started page and the plugin page
 
 = 9.12.0 =
 * 🆕 New: Danger zone on the Settings page, delete all shortcodes, image items and settings at once after typing DELETE to confirm, or choose to remove all plugin data when the plugin is deleted (deactivating never removes data)
